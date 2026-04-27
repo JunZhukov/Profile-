@@ -3,6 +3,7 @@ const message = document.getElementById("message");
 const revealItems = document.querySelectorAll(".reveal");
 const heroRole = document.getElementById("heroRole");
 const profileRole = document.getElementById("profileRole");
+const skillFills = document.querySelectorAll(".skill-fill");
 
 if (greetBtn && message) {
   greetBtn.addEventListener("click", () => {
@@ -15,6 +16,12 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        if (entry.target.id === "skills") {
+          skillFills.forEach((bar) => {
+            const level = Number(bar.dataset.level) || 0;
+            bar.style.width = `${Math.min(Math.max(level, 0), 100)}%`;
+          });
+        }
       } else {
         entry.target.classList.remove("visible");
       }
