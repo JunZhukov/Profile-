@@ -12,7 +12,11 @@
   />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="loading">
+  <div class="intro-loader" id="introLoader" aria-hidden="true">
+    <h2 class="intro-name" data-text="charles landon">charles landon</h2>
+  </div>
+
   <nav class="top-nav">
     <a href="#projects" class="nav-item" data-label="Projects" aria-label="Projects">
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -32,6 +36,11 @@
     <a href="#contact" class="nav-item" data-label="Contact" aria-label="Contact">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 4h16v16H4zM8 16l8-8" />
+      </svg>
+    </a>
+    <a href="#" id="funTrigger" class="nav-item" data-label="Fun" aria-label="Fun">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 10h10a4 4 0 0 1 0 8H7a4 4 0 0 1 0-8zM9 10V8a3 3 0 0 1 6 0v2M9 14h.01M15 14h.01M12 16v.01" />
       </svg>
     </a>
   </nav>
@@ -270,15 +279,34 @@
 
       <section id="contact" class="contact reveal">
         <h3>LET'S WORK TOGETHER</h3>
-        <form>
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="your@email.com" />
-          <textarea placeholder="Message"></textarea>
+        <form id="contactForm">
+          <input id="contactName" type="text" placeholder="Your name" required />
+          <input id="contactEmail" type="email" placeholder="your@email.com" required />
+          <textarea id="contactMessage" placeholder="Message" required></textarea>
           <button id="greetBtn" type="button">Submit</button>
         </form>
         <p id="message" class="message"></p>
+        <div id="submitToast" class="submit-toast" role="status" aria-live="polite">
+          Glad to work with you!
+        </div>
       </section>
     </main>
+  </div>
+
+  <div id="funModal" class="fun-modal" aria-hidden="true">
+    <div class="fun-modal-card">
+      <button id="funCloseBtn" type="button" class="fun-close-btn" aria-label="Close game">Close</button>
+      <h3>FUN MODE: <span>SNAKE</span></h3>
+      <p class="fun-copy">How to play: use your keyboard arrow keys to move. Eat food, grow longer, and avoid walls or your own tail.</p>
+      <div class="snake-wrap">
+        <div class="snake-topbar">
+          <p class="snake-score">Score: <span id="snakeScore">0</span></p>
+          <button id="snakeRestartBtn" type="button" class="snake-btn">Restart</button>
+        </div>
+        <canvas id="snakeCanvas" class="snake-canvas" width="360" height="360" aria-label="Snake game"></canvas>
+        <p id="snakeState" class="snake-state">Press any arrow key to start.</p>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
