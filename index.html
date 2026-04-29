@@ -43,6 +43,11 @@
         <path d="M7 10h10a4 4 0 0 1 0 8H7a4 4 0 0 1 0-8zM9 10V8a3 3 0 0 1 6 0v2M9 14h.01M15 14h.01M12 16v.01" />
       </svg>
     </a>
+    <a href="#" id="settingsTrigger" class="nav-item" data-label="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 9.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM19.4 13a7.6 7.6 0 0 0 .1-2l2-1.5-2-3.4-2.4.7a7.6 7.6 0 0 0-1.7-1L15 3h-6l-.4 2.8a7.6 7.6 0 0 0-1.7 1l-2.4-.7-2 3.4 2 1.5a7.6 7.6 0 0 0 0 2l-2 1.5 2 3.4 2.4-.7a7.6 7.6 0 0 0 1.7 1L9 21h6l.4-2.8a7.6 7.6 0 0 0 1.7-1l2.4.7 2-3.4-2-1.5z" />
+      </svg>
+    </a>
   </nav>
 
   <div class="layout">
@@ -116,7 +121,7 @@
       <section id="projects" class="panel reveal">
         <h3>RECENT PROJECTS</h3>
         <div class="projects-list">
-          <a class="project-row" href="https://github.com/JunZhukov/Dih-Biology" target="_blank" rel="noopener noreferrer">
+          <a class="project-row" href="https://raw.githack.com/JunZhukov/Dih-Biology/refs/heads/main/Dih-Biology/Home.html"_blank" rel="noopener noreferrer">
             <img class="project-thumb" src="dihbiology.png" alt="DihBiology preview" />
             <div class="project-copy">
               <strong>DihBiology</strong>
@@ -125,7 +130,7 @@
             <span class="project-arrow" aria-hidden="true">↗</span>
           </a>
 
-          <a class="project-row" href="https://github.com/JunZhukov/BHIMS" target="_blank" rel="noopener noreferrer">
+          <a class="project-row" href="https://raw.githack.com/JunZhukov/BHIMS/refs/heads/main/Admin/index.html" target="_blank" rel="noopener noreferrer">
             <img class="project-thumb" src="BHMIS.png" alt="BHMIS preview" />
             <div class="project-copy">
               <strong>BHMIS</strong>
@@ -148,7 +153,7 @@
       <section id="experience" class="panel reveal">
         <h3>PROJECT <span>EXPERIENCE</span></h3>
         <div class="experience-list">
-          <a class="experience-item" href="https://github.com/JunZhukov/Dih-Biology" target="_blank" rel="noopener noreferrer">
+          <a class="experience-item" href="https://raw.githack.com/JunZhukov/Dih-Biology/refs/heads/main/Dih-Biology/Home.html" target="_blank" rel="noopener noreferrer">
             <div class="experience-copy">
               <h4>DihBiology</h4>
               <p>Implemented the frontend interface and user experience for the Biology Learning Webapp.</p>
@@ -156,7 +161,7 @@
             </div>
             <span class="project-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="experience-item" href="https://github.com/JunZhukov/BHIMS" target="_blank" rel="noopener noreferrer">
+          <a class="experience-item" href="https://raw.githack.com/JunZhukov/BHIMS/refs/heads/main/Admin/index.html" target="_blank" rel="noopener noreferrer">
             <div class="experience-copy">
               <h4>BHMIS</h4>
               <p>Built both the frontend and backend of the Barangay Health Management Information System.</p>
@@ -308,6 +313,32 @@
       </div>
     </div>
   </div>
+
+  <div id="settingsModal" class="settings-modal" aria-hidden="true">
+    <div class="settings-card">
+      <button id="settingsCloseBtn" type="button" class="settings-close-btn" aria-label="Close settings">Close</button>
+      <h3>SETTINGS</h3>
+      <label class="settings-row" for="themeToggle">
+        <span>Light mode</span>
+        <input id="themeToggle" type="checkbox" />
+      </label>
+      <label class="settings-file-row" for="musicVolume">
+        <span>Music volume</span>
+        <input id="musicVolume" type="range" min="0" max="100" value="5" />
+        <p id="musicVolumeValue" class="music-volume-value">5%</p>
+      </label>
+      <audio id="bgMusicPlayer" class="bg-music-player" loop preload="metadata"></audio>
+      <div class="custom-audio-player" id="customAudioPlayer">
+        <button id="musicPlayPauseBtn" type="button" class="music-icon-btn" aria-label="Play or pause music">▶</button>
+        <span id="musicCurrentTime" class="music-time">0:00</span>
+        <input id="musicSeekBar" class="music-seek" type="range" min="0" max="100" value="0" />
+        <span id="musicDuration" class="music-time">0:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="customCursor" class="custom-cursor" aria-hidden="true"></div>
+  <div id="customCursorDot" class="custom-cursor-dot" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
